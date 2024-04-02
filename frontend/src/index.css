@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+    /* width: 100%; */
+    overflow-x: hidden;
+    background: linear-gradient(90deg, rgba(38,62,139,0.9248949579831933) 1%, rgba(52,90,154,1) 43%, rgba(52,81,125,1) 83%);
+}
