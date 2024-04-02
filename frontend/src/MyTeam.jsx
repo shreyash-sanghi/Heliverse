@@ -78,7 +78,6 @@ const verifyuser = async()=>{
         })   
     } catch (error) {
         alert(error);
-        navigate("/");
     }
 }
 useEffect(()=>{
