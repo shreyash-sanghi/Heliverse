@@ -22,7 +22,7 @@ const token = localStorage.getItem("token");
    const verifyuser = async()=>{
     try {
         axios.defaults.headers.common["Authorization"] = token;
-      const response = await axios.get("http://localhost:5000/myprofile");
+      const response = await axios.get("https://heliverse-backend-beige.vercel.app/myprofile");
       const result = response.data.user;
       console.log(result)
             final(
@@ -45,7 +45,7 @@ const savedata = async(event)=>{
     try {
         setLoading(true);
     const {Name,Email,Interest,Gender,DOB,id} = initial;
-        const response = await axios.post(`http://localhost:5000/editprofile/${id}`,{
+        const response = await axios.post(`https://heliverse-backend-beige.vercel.app/editprofile/${id}`,{
             Name,Email,Interest,Gender,DOB
         })
         toast("Successfully Update ...")

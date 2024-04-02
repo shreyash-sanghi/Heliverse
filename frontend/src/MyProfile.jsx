@@ -23,7 +23,7 @@ const token = localStorage.getItem("token");
    const verifyuser = async()=>{
     try {
         axios.defaults.headers.common["Authorization"] = token;
-      const response = await axios.get("http://localhost:5000/myprofile");
+      const response = await axios.get("https://heliverse-backend-beige.vercel.app/myprofile");
       const result = response.data.user;
       const storage = getStorage();
       const imgref = ref(storage,`project/${result.image}`);

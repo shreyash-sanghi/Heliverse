@@ -63,7 +63,7 @@ const token = localStorage.getItem("token");
 const verifyuser = async()=>{
     try {
         axios.defaults.headers.common["Authorization"] = token;
-      const response = await axios.get("http://localhost:5000/postlist");
+      const response = await axios.get("https://heliverse-backend-beige.vercel.app/postlist");
       const result = response.data.alldata;
       const Name = response.data.Name;
       finName(Name);

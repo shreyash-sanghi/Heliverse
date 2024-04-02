@@ -57,7 +57,7 @@ const token = localStorage.getItem("token");
 const verifyuser = async()=>{
     try {
         axios.defaults.headers.common["Authorization"] = token;
-      const response = await axios.get("http://localhost:5000/myteam");
+      const response = await axios.get("https://heliverse-backend-beige.vercel.app/myteam");
       const result = response.data.alldata;
         console.log(result)
       result.map((info)=>{
@@ -140,7 +140,7 @@ useEffect(()=>{
                     <hr class="mt-6" />
                     <button onClick={async()=>{
                         try {
-                          const response = await axios.delete(`http://localhost:5000/deletemember/${info.id}`)
+                          const response = await axios.delete(`https://heliverse-backend-beige.vercel.app/deletemember/${info.id}`)
                           final((initial)=>
                           initial.filter(e=>e.id!=info.id)
                           )

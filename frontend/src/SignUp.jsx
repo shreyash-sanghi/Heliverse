@@ -43,7 +43,7 @@ const SignUp = ()=>{
             toast("Both Password are Diffrent...")
             setLoading(false);
         }else{
-            const response = await axios.post("http://localhost:5000/signup",{
+            const response = await axios.post("https://heliverse-backend-beige.vercel.app/signup",{
                 Name,Email,Password,Interest,Gender,DOB,image
             })
             toast("Successfully Save ...")
