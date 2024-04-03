@@ -64,13 +64,12 @@ router.post("/login",async(req,res)=>{
 router.post("/myteam/:id",async(req,res)=>{
     try {
         const _id = req.params.id;
-        const varifyUser = jwt.verify(Token,process.env.Sectet_Key1);
-        const user = await Register.findOne({_id:varifyUser._id});
-        const TeamEmail = user.Email;
+
         const result = await Register.findById(_id);
+        console.log(result)
         const { Name,Email,Gender,Interest,image} = result;
         const response = await MyTeam.create({
-          Name,Email,Gender,Interest,image,TeamEmail
+          Name,Email,Gender,Interest,image
         })
         res.sendStatus(202);
     } catch (error) {
@@ -84,8 +83,8 @@ router.post("/myteam/:id",async(req,res)=>{
 router.get("/myteam",async(req,res)=>{
     try {
       const Token = req.header('Authorization');
-      const user = jwt.verify(Token,process.env.Sectet_Key1);
-        const alldata = await MyTeam.find({TeamEmail:user.Email});
+       jwt.verify(Token,process.env.Sectet_Key1);
+        const alldata = await MyTeam.find({},"-Email");
                 res.status(202).json({alldata});
     } catch (error) {
         res.status(404).send(error);

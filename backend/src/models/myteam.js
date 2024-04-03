@@ -27,11 +27,6 @@ const Team = new mongoose.Schema({
         type:String,
         required:true
     },
-    TeamEmail:{
-        type:String,
-        required:true
-    },
-   
 
 })
 
